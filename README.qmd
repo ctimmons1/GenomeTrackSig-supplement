@@ -1,0 +1,85 @@
+---
+title: "README"
+format: gfm
+editor: visual
+---
+
+# GenomeTrackSig-supplement
+
+Data processing, analysis, and visualization code related to analyses with [GenomeTrackSig](https://github.com/morrislab/GenomeTrackSig) R package.
+
+To cite, please see our bioRxiv article: [Timmons, Morris, and Harrigan (2022).](https://www.biorxiv.org/content/10.1101/2022.01.23.477261v4)
+
+# Description of Files
+
+`helper_functions.R`
+
+-   Common functions not included in the `GenomeTrackSig` package that are useful for summarizing changepoints in a sample and finding recurrent changepoints
+
+### 📂 `genomic_features_randomization_tests`
+
+Code used to perform randomization analysis to test for associations between regional mutational signature activity changes and particular genomic/epigenomic features.
+
+`atac_windows.R`
+
+-   Test for associations between changepoints and upstream-downstream changes in chromatin state as measured by ATAC-Seq.
+
+`cna_windows.R`
+
+-   Test for associations between changepoints and upstream-downstream copy number aberrations.
+
+`compartment_windows.R`
+
+-   Test for associations between changepoints and upstream-downstream changes in chromatin state as measured by A/B chromatin compartments.
+
+`dnase.R`
+
+-   Test for associations between changepoints and upstream-downstream changes in chromatin state as measured by DNAse-Seq (only used for melanoma samples).
+
+`genedens_windows.R`
+
+-   Test for associations between changepoints and upstream-downstream changes in gene density.
+
+`kataegis_windows.R`
+
+-   Test for associations between changepoints and upstream-downstream kataegis events.
+
+`replication_windows.R`
+
+-   Test for associations between changepoints and upstream-downstream changes in replication timing.
+
+`cna_cp_overlap.R`
+
+-   Test for significant overlap between changepoints and copy number aberrations.
+
+`kataegis_overlap.R`
+
+-   Test for significant overlap between changepoints and kataegis events.
+
+`tad_overlap.R`
+
+-   Test for significant overlap between changepoints and TAD boundaries.
+
+### 📂 `tables_figures_code`
+
+Code used to produce tables and figures in GenomeTrackSig manuscript.
+
+`binsize_analysis.R`
+
+-   Test effect of choice of bin size on changepoint placement
+
+`n_segs_barplot.R`
+
+-   Visualize the distribution of number of bins per sample
+
+`resampling_simulation.R`
+
+-   Compare changepoints in original signature activity profiles and resampled signature profiles---test the robustness of GenomeTrackSig's changepoint placement to resampling the mutational distribution.
+
+`seg_widths_boxplot.R`
+
+-   Visualize the distribution of segment widths (in bp) across all samples
+
+`summarize_genomic_associations.R`
+
+-   Generate data for table summarizing results of randomization tests exploring associations between changepoints and epi/genomic features.
